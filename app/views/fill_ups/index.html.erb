@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Fill Ups</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fill_ups.each do |fill_up| %>
+      <tr>
+        <td><%= link_to 'Show', fill_up %></td>
+        <td><%= link_to 'Edit', edit_fill_up_path(fill_up) %></td>
+        <td><%= link_to 'Destroy', fill_up, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Fill Up', new_fill_up_path %>

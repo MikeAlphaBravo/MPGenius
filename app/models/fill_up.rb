@@ -1,0 +1,2 @@
+class FillUp < ApplicationRecord
+end
