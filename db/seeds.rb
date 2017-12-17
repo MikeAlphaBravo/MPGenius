@@ -70,12 +70,9 @@ class Seed
       vehicle = Vehicle.find(rand(Vehicle.first.id..Vehicle.last.id))
       user = vehicle.users.first
       vehicle.services.create!(
-        odometer_reading:
-        price_per_gallon:
-        gallons_in_fill:
-        total_cost:
-        percent_city_highway:
-        notes:
+        odometer_reading: Faker::Number.between(0, 250000),
+        total_cost: Faker::Number..decimal(2).between(0, 100),
+        notes: Faker::Hipster.sentence,
         vehicle_id: vehicle.id
       )
       puts "ROVOTRON 4200 #{vehicle.services.last.nickname}"
