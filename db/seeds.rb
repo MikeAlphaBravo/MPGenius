@@ -33,33 +33,52 @@ class Seed
         odometer: Faker::Number.between(0, 250000),
         image: Faker::LoremPixel.image("300x300", false, 'transport')
       )
-      puts "BOARDOTRONIC 3000 #{vehicle.title}"
+      puts "BOARDOTRONIC 3000 #{vehicle.nickname}"
     end
   end
 
-  def generate_board_users
-    BoardUser.destroy_all
-    Board.all.each do |i|
+  def generate_accounts
+    Accounts.destroy_all
+    Vehicle.all.each do |i|
       user = User.find(rand(User.first.id..User.last.id))
-      board_user = BoardUser.create!(
+      accounts = Accounts.create!(
         user_id: user.id,
-        board_id: i.id
+        vehicle_id: i.id
       )
-      puts "KLASPEROOID GENERATION #{board_user.id}"
+      puts "KLASPEROOID GENERATION #{accounts.id}"
     end
   end
 
-  def generate_mezzages
+  def generate_fill_ups
     100.times do |i|
-      board = Board.find(rand(Board.first.id..Board.last.id))
-      user = board.users.first
-      board.mezzages.create!(
-        title: Faker::Simpsons.location,
-        body: Faker::RickAndMorty.quote,
-        user_id: user.id
+      vehicle = Vehicle.find(rand(Vehicle.first.id..Vehicle.last.id))
+      user = vehicle.users.first
+      vehicle.fill_ups.create!(
+        odometer_reading: Faker::Number.between(0, 250000),
+        price_per_gallon: Faker::Number.decimal(2),
+        gallons_in_fill: Faker::Number..decimal(2).between(0, 20),
+        total_cost: Faker::Number..decimal(2).between(0, 100),
+        notes: Faker::Hipster.sentence,
+        vehicle_id: vehicle.id
       )
-      puts "ROVOTRON 4200 #{board.mezzages.last.title}"
+      puts "ROVOTRON 4200 #{vehicle.fill_ups.last.nickname}"
     end
+  end
+
+  def generate_services
+    20.times do |i|
+      vehicle = Vehicle.find(rand(Vehicle.first.id..Vehicle.last.id))
+      user = vehicle.users.first
+      vehicle.services.create!(
+        odometer_reading:
+        price_per_gallon:
+        gallons_in_fill:
+        total_cost:
+        percent_city_highway:
+        notes:
+        vehicle_id: vehicle.id
+      )
+      puts "ROVOTRON 4200 #{vehicle.services.last.nickname}"
   end
 end
 
