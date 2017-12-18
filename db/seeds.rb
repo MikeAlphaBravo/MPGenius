@@ -56,6 +56,7 @@ class Seed
       user = vehicle.users.first
       # vehicle.fill_ups.create!(
       fill_ups = FillUp.create!(
+        type: "Oil Change",
         odometer_reading: Faker::Number.between(0, 250000),
         price_per_gallon: Faker::Number.decimal(2),
         gallons_in_fill: Faker::Number.decimal(2),
@@ -76,6 +77,7 @@ class Seed
       user = vehicle.users.first
       # vehicle.services.create!(
       services = Service.create!(
+        type: "Oil Change",
         odometer_reading: Faker::Number.between(0, 250000),
         total_cost: Faker::Number.decimal(2),
         # .between(0, 100),
