@@ -8,7 +8,39 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed|Inconsolata|Droid+Sans');
+  </style>
+
+  <header>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+      <div id="tobenamed">
+        <nav class="navbar-brand"><%= link_to 'MPGenius', root_path, class: 'nav-link' %></nav>
+      </div>
+      <ul class="navbar-nav">
+        <% if current_user %>
+          <li class="nav-item"><%= link_to current_user.username, edit_user_registration_path, class: 'nav-link' %></li>
+          <li class="nav-item"><%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'nav-link' %></li>
+        <% else %>
+          <li class="nav-item"><%= link_to 'Login', new_user_session_path, class: 'nav-link' %></li>
+          <li class="nav-item"><%= link_to 'Register', new_user_registration_path, class: 'nav-link'  %></li>
+        <% end %>
+      </ul>
+    </nav>
+  </header><br>
+
   <body>
-    <%= yield %>
+    <div class='container'>
+      <% flash.each do |key, value| %>
+        <div class='alert alert-dismissible fade show card alertCard' role='alert'>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <li aria-hidden="true">&times;</li>
+          </button>
+          <%= value %>
+        </div>
+      <% end %>
+      <%= yield %>
+    </div>
   </body>
+
 </html>
