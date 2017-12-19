@@ -19,17 +19,11 @@
   <div class="field">
     <%= form.label :image %><br>
     <%= form.file_field :image %>
-  </div>
+  </div><br>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-
-<div class="form">
-  <input placeholder="Zip Code">
   <select data-placeholder="&nbsp;Year" class="chzn-select year" style="width:70px;" tabindex="1" id="year">
-    <option value=""></option>
-    <option value="2014">2014</option>
+    <option value="">Year</option>
+    <option value="2014">2014<%= form.text_field :year %></option>
     <option value="2013">2013</option>
     <option value="2012">2012</option>
     <option value="2011">2011</option>
@@ -56,7 +50,7 @@
     <option value="1990">1990</option>
   </select>
   <select data-placeholder="Make" class="chzn-select" style="width:115px;" tabindex="2" id="make">
-    <option value=""></option>
+    <option value="">Make</option>
     <option value="ACURA">ACURA</option>
     <option value="ASTON MARTIN">ASTON MARTIN</option>
     <option value="AUDI">AUDI</option>
@@ -102,33 +96,32 @@
     <option value="VOLKSWAGEN">VOLKSWAGEN</option>
     <option value="VOLVO">VOLVO</option>
   </select>
+  <select data-placeholder="Model" class="chzn-select" style="width:115px;" tabindex="2" id="model">
+    <option value="">Model</option>
+    <option value="CROSSTREK">CROSSTREK</option>
+    <option value="FORESTER">FORESTER</option>
+    <option value="IMPREZA">IMPREZA</option>
+    <option value="LEGACY">LEGACY</option>
+    <option value="OUTBACK">OUTBACK</option>
+    <option value="WRX">WRX</option>
+    <option value="">Model</option>
+    <option value="COMMANDER">COMMANDER</option>
+    <option value="COMPASS">COMPASS</option>
+    <option value="GRAND CHEROKEE">GRAND CHEROKEE</option>
+    <option value="LIBERTY">LIBERTY</option>
+    <option value="PATRIOT">PATRIOT</option>
+    <option value="WRANGLER">WRANGLER</option>
+  </select>
+  <select data-placeholder="Trim" class="chzn-select" style="width:100px;" tabindex="4" id="trim">
+    <option value="">Trim</option>
+    <option value="LIMITED">LIMITED</option>
+    <option value="UNLIMITED">UNLIMITED</option>
+    <option value="SPORT">SPORT</option>
+    <option value="RENEGADE">RENEGADE</option>
+  </select><br><br>
 
-    <div id="brands">
-      <select class="audi">
-        <option value="1">1</option>
-        <option value="2">2</option>
-      </select>
-      <select class="bmw">
-        <option value="3">3</option>
-        <option value="4">4</option>
-      </select>
-    </div>
-  </div>
+  <div class="actions">
+    <%= form.submit %>
+  </div><br>
 
-
-</select><select data-placeholder="Model" class="chzn-select" style="width:115px;" tabindex="3" id="model">
-<option value=""></option>
-<option value="COMMANDER">COMMANDER</option>
-<option value="COMPASS">COMPASS</option>
-<option value="GRAND CHEROKEE">GRAND CHEROKEE</option>
-<option value="LIBERTY">LIBERTY</option>
-<option value="PATRIOT">PATRIOT</option>
-<option value="WRANGLER">WRANGLER</option>
-</select><select data-placeholder="Trim" class="chzn-select" style="width:100px;" tabindex="4" id="trim">
-<option value=""></option>
-<option value="LIMITED">LIMITED</option>
-<option value="UNLIMITED">UNLIMITED</option>
-<option value="SPORT">SPORT</option>
-<option value="RENEGADE">RENEGADE</option>
-</select>
 <% end %>
