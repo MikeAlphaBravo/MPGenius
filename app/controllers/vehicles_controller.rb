@@ -25,46 +25,35 @@ class VehiclesController < ApplicationController
   # POST /vehicles.json
   def create
     @vehicle = current_user.vehicles.new(vehicle_params)
-
-    respond_to do |format|
-      if @vehicle.save
-        format.html { redirect_to @vehicle, notice: 'Vehicle was successfully created.' }
-        format.json { render :show, status: :created, location: @vehicle }
-      else
-        format.html { render :new }
-        format.json { render json: @vehicle.errors, status: :unprocessable_entity }
-      end
+    if @vehicle.save
+      redirect_to @vehicle, notice: 'Vehicle was successfully created.'
+    else
+      render :new
     end
   end
 
   # PATCH/PUT /vehicles/1
   # PATCH/PUT /vehicles/1.json
   def update
-    respond_to do |format|
-      if @vehicle.update(vehicle_params)
-        format.html { redirect_to @vehicle, notice: 'Vehicle was successfully updated.' }
-        format.json { render :show, status: :ok, location: @vehicle }
-      else
-        format.html { render :edit }
-        format.json { render json: @vehicle.errors, status: :unprocessable_entity }
-      end
+    if @vehicle.update(vehicle_params)
+      redirect_to @vehicle, notice: 'Vehicle was successfully updated.'
+    else
+      render :edit
     end
   end
 
   # DELETE /vehicles/1
   # DELETE /vehicles/1.json
   def destroy
-    @vehicle.destroy
-    respond_to do |format|
-      format.html { redirect_to vehicles_url, notice: 'Vehicle was successfully destroyed.' }
-      format.json { head :no_content }
+    if @vehicle.destroy
+      redirect_to vehicles_url, notice: 'Vehicle was successfully destroyed.'
     end
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_vehicle
-      @vehicle = Vehicle.find(params[:id])
+      @vehicle = current_user.vehicles.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
