@@ -19,7 +19,7 @@ class Seed
     )
     puts "Test User Created"
 
-    5.times do |i|
+    15.times do |i|
       user = User.create!(
         email: Faker::Internet.email,
         username: Faker::Simpsons.character,
@@ -32,7 +32,7 @@ class Seed
 
   def generate_vehicles
     Vehicle.destroy_all
-    10.times do |i|
+    20.times do |i|
       vehicle = Vehicle.create!(
         nickname: Faker::Superhero.name,
         year: Faker::Number.between(1950, 2018),
@@ -61,7 +61,7 @@ class Seed
 
   def generate_fill_ups
     FillUp.destroy_all
-    20.times do |i|
+    50.times do |i|
       vehicle = Vehicle.find(rand(Vehicle.first.id..Vehicle.last.id))
       # vehicle.fill_ups.create!(
       fill_up = vehicle.fill_ups.create!(
@@ -79,7 +79,7 @@ class Seed
 
   def generate_services
     Service.destroy_all
-    5.times do |i|
+    20.times do |i|
       vehicle = Vehicle.find(rand(Vehicle.first.id..Vehicle.last.id))
       # vehicle.services.create!(
       service = vehicle.services.create!(

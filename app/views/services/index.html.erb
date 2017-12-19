@@ -12,9 +12,9 @@
   <tbody>
     <% @services.each do |service| %>
       <tr>
-        <td><%= link_to 'Show', service %></td>
-        <td><%= link_to 'Edit', edit_service_path(service) %></td>
-        <td><%= link_to 'Destroy', service, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', vehicle_service_path(@vehicle, service) %></td>
+        <td><%= link_to 'Edit', edit_vehicle_service_path(@vehicle, service) %></td>
+        <td><%= link_to 'Destroy', vehicle_service_path(@vehicle, service), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -22,4 +22,4 @@
 
 <br>
 
-<%= link_to 'New Service', new_service_path %>
+<%= link_to 'New Service', new_vehicle_service_path(@vehicle) %>

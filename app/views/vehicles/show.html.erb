@@ -25,3 +25,14 @@
 <% end %>
 
 <%= link_to 'Create new Fuel Report', new_vehicle_fill_up_path(@vehicle) %>
+
+
+<% @vehicle.services.each do |service| %>
+  <ul>
+    <li><%= link_to 'Fill Up', vehicle_service_path(@vehicle, service) %>&nbsp;
+    <%= link_to 'Edit', edit_vehicle_service_path(@vehicle, service) %> |&nbsp;
+    <%= link_to 'Destroy', vehicle_service_path(@vehicle, service), method: :delete, data: { confirm: 'Are you sure?' } %></li>
+  </ul>
+<% end %>
+
+<%= link_to 'Create new Fuel Report', new_vehicle_service_path(@vehicle) %>
