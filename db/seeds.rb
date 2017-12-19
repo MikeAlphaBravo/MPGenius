@@ -11,6 +11,14 @@ class Seed
 
   def generate_users
     User.destroy_all
+    user = User.create!(
+      email: "test@test.com",
+      username: "test",
+      password: 'password',
+      password_confirmation: 'password'
+    )
+    puts "Test User Created"
+    
     5.times do |i|
       user = User.create!(
         email: Faker::Internet.email,
@@ -32,7 +40,8 @@ class Seed
         model: Faker::Lovecraft.word,
         notes: Faker::Hipster.sentence,
         odometer: Faker::Number.between(0, 250000),
-        image: Faker::LoremPixel.image("300x300", false, 'transport')
+        image: File.open(File.join(Rails.root, 'app', 'assets', 'images', 'sample', "sample#{rand(6)}.jpeg"))
+        # image: Faker::LoremPixel.image("300x300", false, 'transport')
       )
       puts "Vehicle Generated #{vehicle.nickname}"
     end
