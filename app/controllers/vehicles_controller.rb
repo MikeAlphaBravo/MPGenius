@@ -4,7 +4,7 @@ class VehiclesController < ApplicationController
   # GET /vehicles
   # GET /vehicles.json
   def index
-    @vehicles = Vehicle.all
+    @vehicles = current_user.vehicles
   end
 
   # GET /vehicles/1
@@ -14,7 +14,7 @@ class VehiclesController < ApplicationController
 
   # GET /vehicles/new
   def new
-    @vehicle = Vehicle.new
+    @vehicle = current_user.vehicles.new
   end
 
   # GET /vehicles/1/edit
@@ -24,7 +24,7 @@ class VehiclesController < ApplicationController
   # POST /vehicles
   # POST /vehicles.json
   def create
-    @vehicle = Vehicle.new(vehicle_params)
+    @vehicle = current_user.vehicles.new(vehicle_params)
 
     respond_to do |format|
       if @vehicle.save

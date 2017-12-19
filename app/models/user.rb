@@ -6,7 +6,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :accounts
-  has_many :vehicle, through: :accounts
+  has_many :vehicles, through: :accounts
 
   validates_presence_of :username, :email
 

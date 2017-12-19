@@ -6,8 +6,12 @@
     <li>Year: <%= @vehicle.year %></li>
     <li>Make: <%= @vehicle.make %></li>
     <li>Model: <%= @vehicle.model %></li>
-    <li>Notes: <%= @vehicle.notes %></li>
     <li>Mileage: <%= @vehicle.odometer %></li>
+    <li>Notes: <%= @vehicle.notes %></li>
   </ul>
+
+  <h4>Average MPG: <%= %></h4>
+  <h4>Average MPG of a bicycle 178 *</h4>
+
 <%= link_to 'Edit', edit_vehicle_path(@vehicle) %> |
 <%= link_to 'Back', vehicles_path %>
