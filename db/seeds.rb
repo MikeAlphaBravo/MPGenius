@@ -11,11 +11,12 @@ class Seed
 
   def generate_users
     User.destroy_all
-    30.times do |i|
+    5.times do |i|
       user = User.create!(
         email: Faker::Internet.email,
         username: Faker::Simpsons.character,
-        password: '11111111'
+        password: 'password',
+        password_confirmation: 'password'
       )
       puts "User Generated #{user.username}"
     end
@@ -23,7 +24,7 @@ class Seed
 
   def generate_vehicles
     Vehicle.destroy_all
-    20.times do |i|
+    10.times do |i|
       vehicle = Vehicle.create!(
         nickname: Faker::Superhero.name,
         year: Faker::Number.between(1950, 2018),
@@ -51,7 +52,7 @@ class Seed
 
   def generate_fill_ups
     FillUp.destroy_all
-    100.times do |i|
+    20.times do |i|
       vehicle = Vehicle.find(rand(Vehicle.first.id..Vehicle.last.id))
       user = vehicle.users.first
       # vehicle.fill_ups.create!(
@@ -71,7 +72,7 @@ class Seed
 
   def generate_services
     Service.destroy_all
-    20.times do |i|
+    5.times do |i|
       vehicle = Vehicle.find(rand(Vehicle.first.id..Vehicle.last.id))
       user = vehicle.users.first
       # vehicle.services.create!(
