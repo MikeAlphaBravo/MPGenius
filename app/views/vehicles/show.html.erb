@@ -1,6 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <%= @vehicle.nickname %>
-
+<%= image_tag("#{@vehicle.image}", :class => "rounded_corners") %>
+  <ul class="no_bullets">
+    <li>Year: <%= @vehicle.year %></li>
+    <li>Make: <%= @vehicle.make %></li>
+    <li>Model: <%= @vehicle.model %></li>
+    <li>Notes: <%= @vehicle.notes %></li>
+    <li>Mileage: <%= @vehicle.odometer %></li>
+  </ul>
 <%= link_to 'Edit', edit_vehicle_path(@vehicle) %> |
 <%= link_to 'Back', vehicles_path %>
