@@ -1,6 +1,6 @@
 class ServicesController < ApplicationController
   before_action :set_service, only: [:show, :edit, :update, :destroy]
-  before_action :set_vehicle, only: [:index, :new]
+  before_action :set_vehicle, only: [:index, :new, :edit, :show]
 
   # GET /services
   # GET /services.json

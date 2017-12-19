@@ -1,6 +1,6 @@
 class FillUpsController < ApplicationController
   before_action :set_fill_up, only: [:show, :edit, :update, :destroy]
-  before_action :set_vehicle, only: [:index, :new]
+  before_action :set_vehicle, only: [:index, :new, :edit, :show]
 
   # GET /fill_ups
   # GET /fill_ups.json

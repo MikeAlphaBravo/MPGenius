@@ -29,7 +29,7 @@
 
 <% @vehicle.services.each do |service| %>
   <ul>
-    <li><%= link_to 'Fill Up', vehicle_service_path(@vehicle, service) %>&nbsp;
+    <li><%= link_to 'Service', vehicle_service_path(@vehicle, service) %>&nbsp;
     <%= link_to 'Edit', edit_vehicle_service_path(@vehicle, service) %> |&nbsp;
     <%= link_to 'Destroy', vehicle_service_path(@vehicle, service), method: :delete, data: { confirm: 'Are you sure?' } %></li>
   </ul>
