@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-<%= @vehicle.nickname %>
-<%= image_tag("#{@vehicle.image}", :class => "rounded_corners") %>
+<%= image_tag("#{@vehicle.image}", :class => "rounded_corners") %><br>
+<h5><%= @vehicle.nickname %></h5>
   <ul class="no_bullets">
     <li>Year: <%= @vehicle.year %></li>
     <li>Make: <%= @vehicle.make %></li>
