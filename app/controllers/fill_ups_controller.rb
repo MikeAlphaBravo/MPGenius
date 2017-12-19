@@ -1,10 +1,12 @@
 class FillUpsController < ApplicationController
   before_action :set_fill_up, only: [:show, :edit, :update, :destroy]
+  before_action :set_vehicle, only: [:index, :new]
 
   # GET /fill_ups
   # GET /fill_ups.json
   def index
-    @fill_ups = FillUp.all
+    @fill_ups = @vehicle.fill_ups
+    # if NO fillups all going to exist get rid of this.
   end
 
   # GET /fill_ups/1
@@ -65,6 +67,10 @@ class FillUpsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_fill_up
       @fill_up = FillUp.find(params[:id])
+    end
+
+    def set_vehicle
+      @vehicle = Vehicle.find(params[:vehicle_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

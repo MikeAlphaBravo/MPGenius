@@ -16,10 +16,12 @@
 <%= link_to 'Edit', edit_vehicle_path(@vehicle) %> |
 <%= link_to 'Back', vehicles_path %>
 
-<% @fill_ups.each do |fill_up| %>
-  <tr>
-    <td><%= link_to 'Fill Up', fill_up %>&nbsp;</td>
-    <td><%= link_to 'Edit', edit_fill_up_path(fill_up) %> |&nbsp;</td>
-    <td><%= link_to 'Destroy', fill_up, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+<% @vehicle.fill_ups.each do |fill_up| %>
+  <ul>
+    <li><%= link_to 'Fill Up', vehicle_fill_up_path(@vehicle, fill_up) %>&nbsp;
+    <%= link_to 'Edit', edit_vehicle_fill_up_path(@vehicle, fill_up) %> |&nbsp;
+    <%= link_to 'Destroy', vehicle_fill_up_path(@vehicle, fill_up), method: :delete, data: { confirm: 'Are you sure?' } %></li>
+  </ul>
 <% end %>
+
+<%= link_to 'Create new Fuel Report', new_vehicle_fill_up_path(@vehicle) %>

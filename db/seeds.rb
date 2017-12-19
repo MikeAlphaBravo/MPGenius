@@ -18,7 +18,7 @@ class Seed
       password_confirmation: 'password'
     )
     puts "Test User Created"
-    
+
     5.times do |i|
       user = User.create!(
         email: Faker::Internet.email,
@@ -63,19 +63,17 @@ class Seed
     FillUp.destroy_all
     20.times do |i|
       vehicle = Vehicle.find(rand(Vehicle.first.id..Vehicle.last.id))
-      user = vehicle.users.first
       # vehicle.fill_ups.create!(
-      fill_ups = FillUp.create!(
+      fill_up = vehicle.fill_ups.create!(
         odometer_reading: Faker::Number.between(0, 250000),
         price_per_gallon: Faker::Number.decimal(2),
         gallons_in_fill: Faker::Number.decimal(2),
         # .between(0, 20)
         total_cost: Faker::Number.decimal(2),
         # .between(0, 100),
-        notes: Faker::Hipster.sentence,
-        vehicle_id: vehicle.id
+        notes: Faker::Hipster.sentence
       )
-      puts "Fill Ups Generated #{vehicle.fill_ups.last.created_at}"
+      puts "Fill Ups Generated #{fill_up.created_at}"
     end
   end
 
@@ -83,17 +81,15 @@ class Seed
     Service.destroy_all
     5.times do |i|
       vehicle = Vehicle.find(rand(Vehicle.first.id..Vehicle.last.id))
-      user = vehicle.users.first
       # vehicle.services.create!(
-      services = Service.create!(
+      service = vehicle.services.create!(
         service_type: "Oil Change",
         odometer_reading: Faker::Number.between(0, 250000),
         total_cost: Faker::Number.decimal(2),
         # .between(0, 100),
-        notes: Faker::Hipster.sentence,
-        vehicle_id: vehicle.id
+        notes: Faker::Hipster.sentence
       )
-      puts "Services Generated #{vehicle.services.last.created_at}"
+      puts "Services Generated #{service.created_at}"
     end
   end
 end

@@ -12,9 +12,9 @@
   <tbody>
     <% @fill_ups.each do |fill_up| %>
       <tr>
-        <td><%= link_to 'Show', fill_up %></td>
-        <td><%= link_to 'Edit', edit_fill_up_path(fill_up) %></td>
-        <td><%= link_to 'Destroy', fill_up, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', vehicle_fill_up_path(@vehicle, fill_up) %></td>
+        <td><%= link_to 'Edit', edit_vehicle_fill_up_path(@vehicle, fill_up) %></td>
+        <td><%= link_to 'Destroy', vehicle_fill_up_path(@vehicle, fill_up), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -22,4 +22,4 @@
 
 <br>
 
-<%= link_to 'New Fill Up', new_fill_up_path %>
+<%= link_to 'New Fill Up', new_vehicle_fill_up_path(@vehicle) %>
