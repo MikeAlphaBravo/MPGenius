@@ -10,4 +10,8 @@ class ApplicationController < ActionController::Base
      devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:username, :email, :password, :password_confirmation, :current_password) }
   end
 
+  # def after_new_session_path_for(vehicle)
+  #   root_path
+  # end
+
 end

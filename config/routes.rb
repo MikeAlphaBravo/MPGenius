@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :accounts
   root to: "vehicles#index"
+  # root to: "homepage#index"
 
   resources :services
   resources :fill_ups
