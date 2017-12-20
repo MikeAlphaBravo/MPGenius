@@ -1,6 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<%= render 'form', service: @service %>
+<h5><%= @vehicle.nickname %></h5>
+<p>Service details</p>
+  <ul class="no_bullets">
+    <li>Date: <%= @service.updated_at %></li>
+    <li>Type: <%= @service.service_type %></li>
+    <li>Odometer Reading: <%= @service.odometer_reading %></li>
+    <li>Total Cost for Service: <%= @service.total_cost %></li>
+    <li>NOTES: <%= @service.notes %></li>
+  </ul>
+
+  <h5>Average MPG: <%= %></h5>
+  <h5>Average MPG of a bicycle 178 *</h5>
 
 <%= link_to 'Edit', edit_vehicle_service_path(@vehicle, @service) %> |
 <%= link_to 'Back', vehicle_services_path %>
