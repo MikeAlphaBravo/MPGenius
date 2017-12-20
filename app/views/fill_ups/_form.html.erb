@@ -11,6 +11,36 @@
     </div>
   <% end %>
 
+  <div class="field">
+    <%= form.label :odometer_reading %><br>
+    <%= form.number_field :odometer_reading %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price_per_gallon %><br>
+    <%= form.number_field :price_per_gallon %>
+  </div>
+
+  <div class="field">
+    <%= form.label :gallons_in_fill %><br>
+    <%= form.number_field :gallons_in_fill %>
+  </div>
+
+  <div class="field">
+    <%= form.label :total_cost %><br>
+    <%= form.number_field :total_cost %>
+  </div>
+
+  <div class="field">
+    <%= form.label :percent_city_highway %><br>
+    <%= form.number_field :percent_city_highway %>
+  </div>
+
+  <div class="field">
+    <%= form.label :notes %><br>
+    <%= form.text_field :notes %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

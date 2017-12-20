@@ -1,4 +1,19 @@
 <p id="notice"><%= notice %></p>
 
+<h5><%= @vehicle.nickname %></h5>
+<p>Fill Up details</p>
+  <ul class="no_bullets">
+    <li>Date: <%= @fill_up.updated_at %></li>
+    <li>Odometer Reading: <%= @fill_up.odometer_reading %></li>
+    <li>Price Per Gallon: <%= @fill_up.price_per_gallon %></li>
+    <li>Gallons in Fuel Up: <%= @fill_up.gallons_in_fill %></li>
+    <li>Total Cost for Fuel Up: <%= @fill_up.total_cost %></li>
+    <li>City(0) vs. Highway Driving(100): <%= @fill_up.percent_city_highway %></li>
+    <li>NOTES: <%= @fill_up.notes %></li>
+  </ul>
+
+  <h5>Average MPG: <%= %></h5>
+  <h5>Average MPG of a bicycle 178 *</h5>
+
 <%= link_to 'Edit', edit_vehicle_fill_up_path(@vehicle, @fill_up) %> |
 <%= link_to 'Back', vehicle_fill_ups_path %>

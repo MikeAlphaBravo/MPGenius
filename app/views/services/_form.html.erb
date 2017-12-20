@@ -11,6 +11,27 @@
     </div>
   <% end %>
 
+  to be a drop down menu
+  <div class="field">
+    <%= form.label :service_type %><br>
+    <%= form.number_field :service_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :odometer_reading %><br>
+    <%= form.number_field :odometer_reading %>
+  </div>
+
+  <div class="field">
+    <%= form.label :total_cost %><br>
+    <%= form.number_field :total_cost %>
+  </div>
+
+  <div class="field">
+    <%= form.label :notes %><br>
+    <%= form.text_field :notes %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
