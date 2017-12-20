@@ -1,54 +1,28 @@
 <h1>Welcome to MPGenius</h1>
 <hr>
-<h4>Log in to see your vehicles and start tracking your fuel economy!</h4>
-
-<h5>These are the things we have too offer</h5>
-<p>Succulents shaman lumbersexual artisan organic crucifix heirloom locavore tbh sriracha tofu quinoa chicharrones actually. Farm-to-table woke poke, slow-carb austin yuccie cred tofu selvage cardigan stumptown single-origin coffee neutra chillwave tousled. Gochujang poke austin four loko jean shorts. Shaman slow-carb deep v vinyl, la croix pinterest tilde venmo tacos chia wolf man bun. Hella quinoa roof party blue bottle vice coloring book. Wayfarers poke jean shorts fashion axe mlkshk venmo. Disrupt coloring book la croix gochujang wayfarers gluten-free.</p>
-<h5>Never again have to keep a paper notepad to track your miles</h5>
-<p>Deep v gastropub taxidermy, hexagon keytar irony lumbersexual banjo vape YOLO truffaut hammock vinyl. Ennui vegan plaid shoreditch bushwick. Truffaut franzen occupy schlitz, chartreuse mixtape health goth kickstarter cold-pressed taiyaki master cleanse cray coloring book. Flexitarian small batch photo booth narwhal cred chambray. Etsy messenger bag venmo, offal bespoke jianbing ugh ethical. Brunch mlkshk +1 neutra.
-<h5>Awesome start to an awesome app, help us build it!</h5>
-Austin etsy shoreditch, meggings polaroid succulents YOLO poke blog gentrify beard copper mug vaporware banh mi. Try-hard deep v tacos paleo kogi adaptogen. Heirloom cold-pressed +1, sartorial kombucha banh mi vape PBR&B hexagon. Lo-fi street art tofu squid PBR&B letterpress tilde bespoke vegan kombucha church-key edison bulb. VHS microdosing adaptogen marfa tote bag selfies, sriracha bushwick.</p>
-<p>Thundercats helvetica knausgaard mixtape, schlitz XOXO craft beer brooklyn. Deep v literally photo booth, distillery authentic banh mi asymmetrical poutine beard. Biodiesel messenger bag man braid ennui glossier gochujang unicorn offal you probably haven't heard of them small batch gentrify waistcoat kombucha.</p>
-
-<%= image_tag("/images/homepage/homepage_screenshot.png", :class => "rounded_corners") %><br>
-
+<div class="row">
+  <div class="col">
+    <h4>Log in to see your vehicles and start tracking your fuel economy!</h4>
+    <h5>These are the things we have too offer</h5>
+    <p>Succulents shaman lumbersexual artisan organic crucifix heirloom locavore tbh sriracha tofu quinoa chicharrones actually. Farm-to-table woke poke, slow-carb austin yuccie cred tofu selvage cardigan stumptown single-origin coffee neutra chillwave tousled. Gochujang poke austin four loko jean shorts. Shaman slow-carb deep v vinyl, la croix pinterest tilde venmo tacos chia wolf man bun. Hella quinoa roof party blue bottle vice coloring book. Wayfarers poke jean shorts fashion axe mlkshk venmo. Disrupt coloring book la croix gochujang wayfarers gluten-free.</p>
+    <h5>Never again have to keep a paper notepad to track your miles</h5>
+    <p>Deep v gastropub taxidermy, hexagon keytar irony lumbersexual banjo vape YOLO truffaut hammock vinyl. Ennui vegan plaid shoreditch bushwick. Truffaut franzen occupy schlitz, chartreuse mixtape health goth kickstarter cold-pressed taiyaki master cleanse cray coloring book. Flexitarian small batch photo booth narwhal cred chambray. Etsy messenger bag venmo, offal bespoke jianbing ugh ethical. Brunch mlkshk +1 neutra.
+    <h5>Awesome start to an awesome app, help us build it!</h5>
+    Austin etsy shoreditch, meggings polaroid succulents YOLO poke blog gentrify beard copper mug vaporware banh mi. Try-hard deep v tacos paleo kogi adaptogen. Heirloom cold-pressed +1, sartorial kombucha banh mi vape PBR&B hexagon. Lo-fi street art tofu squid PBR&B letterpress tilde bespoke vegan kombucha church-key edison bulb. VHS microdosing adaptogen marfa tote bag selfies, sriracha bushwick.</p>
+    <p>Thundercats helvetica knausgaard mixtape, schlitz XOXO craft beer brooklyn. Deep v literally photo booth, distillery authentic banh mi asymmetrical poutine beard. Biodiesel messenger bag man braid ennui glossier gochujang unicorn offal you probably haven't heard of them small batch gentrify waistcoat kombucha.</p>
+  </div>
+  <hr>
+  <div class="col">
+    <%= image_tag("/homepage/homepage_screenshot.png", class: "rounded_corners") %><br>
+  </div>
+</div>
 <hr>
-
-<%= image_tag("/images/homepage/mobile_screenshot.png", :class => "rounded_corners") %><br>
-
-<h2>Create An Account</h2>
-
-<%= form_for(resource, as: resource_name, url: new_user_registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :username %><br />
-    <%= f.text_field :username, autofocus: true %>
+<div class="row">
+  <div class="col">
+    <%= image_tag("/images/homepage/mobile_screenshot.png", :class => "rounded_corners") %><br>
   </div>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+  <div class="col">
+    <h2>Create An Account</h2>
+    render 'form'
   </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-
-  <h5>Already have an account? <%= link_to 'Login', new_user_session_path %></h5>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
