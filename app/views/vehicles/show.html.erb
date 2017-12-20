@@ -1,38 +1,52 @@
 <p id="notice"><%= notice %></p>
-
 <%= image_tag("#{@vehicle.image}", :class => "rounded_corners") %><br>
-<h5><%= @vehicle.nickname %></h5>
-  <ul class="no_bullets">
-    <li>Year: <%= @vehicle.year %></li>
-    <li>Make: <%= @vehicle.make %></li>
-    <li>Model: <%= @vehicle.model %></li>
-    <li>Mileage: <%= @vehicle.odometer %></li>
-    <li>Notes: <%= @vehicle.notes %></li>
-  </ul>
+<div class="row">
+  <div class="col-md-4">
+    <h5><%= @vehicle.nickname %></h5>
+    <ul class="no_bullets">
+      <li>Year: <%= @vehicle.year %></li>
+      <li>Make: <%= @vehicle.make %></li>
+      <li>Model: <%= @vehicle.model %></li>
+      <li>Mileage: <%= @vehicle.odometer %></li>
+      <li>Notes: <%= @vehicle.notes %></li>
+    </ul>
 
-  <h5>Average MPG: <%= %></h5>
-  <h5>Average MPG of a bicycle 178 *</h5>
+    <h5>Average MPG: <%= %></h5>
+    <h5>Average MPG of a bicycle 178 *</h5>
 
-<%= link_to 'Edit', edit_vehicle_path(@vehicle) %> |
-<%= link_to 'Back', vehicles_path %>
+    <%= link_to 'Edit Vihicle', edit_vehicle_path(@vehicle) %>
+  </div>
+  <div class="col-md-4">
+    <h5>Fill Ups</h5>
+    <% @vehicle.fill_ups.each do |fill_up| %>
+      <ul>
+        <li><%= link_to vehicle_fill_up_path(@vehicle, fill_up) do %>
+              <%= fill_up.created_at.strftime("%F") %>
+            <% end %>&nbsp;&nbsp;
+          <%= link_to 'Edit', edit_vehicle_fill_up_path(@vehicle, fill_up) %> |&nbsp;
+          <%= link_to 'Destroy', vehicle_fill_up_path(@vehicle, fill_up), method: :delete, data: { confirm: 'Are you sure?' } %></li>
+      </ul>
+    <% end %>
+    <%= link_to 'Create new Fuel Report', new_vehicle_fill_up_path(@vehicle) %>
+  </div>
+  <div class="col-md-4">
+    <h5>Servies</h5>
+    <% @vehicle.services.each do |service| %>
+    <ul>
+      <li><%= link_to vehicle_service_path(@vehicle, service) do %>
+            <%= service.created_at.strftime("%F") %>
+          <% end %>&nbsp;&nbsp;
+        <%= link_to 'Edit', edit_vehicle_service_path(@vehicle, service) %> |&nbsp;
+        <%= link_to 'Destroy', vehicle_service_path(@vehicle, service), method: :delete, data: { confirm: 'Are you sure?' } %></li>
+    </ul>
+    <% end %>
 
-<% @vehicle.fill_ups.each do |fill_up| %>
-  <ul>
-    <li><%= link_to 'Fill Up', vehicle_fill_up_path(@vehicle, fill_up) %>&nbsp;
-    <%= link_to 'Edit', edit_vehicle_fill_up_path(@vehicle, fill_up) %> |&nbsp;
-    <%= link_to 'Destroy', vehicle_fill_up_path(@vehicle, fill_up), method: :delete, data: { confirm: 'Are you sure?' } %></li>
-  </ul>
-<% end %>
+    <%= link_to 'Create new Fuel Report', new_vehicle_service_path(@vehicle) %>
 
-<%= link_to 'Create new Fuel Report', new_vehicle_fill_up_path(@vehicle) %>
+  </div>
 
+</div>
 
-<% @vehicle.services.each do |service| %>
-  <ul>
-    <li><%= link_to 'Service', vehicle_service_path(@vehicle, service) %>&nbsp;
-    <%= link_to 'Edit', edit_vehicle_service_path(@vehicle, service) %> |&nbsp;
-    <%= link_to 'Destroy', vehicle_service_path(@vehicle, service), method: :delete, data: { confirm: 'Are you sure?' } %></li>
-  </ul>
-<% end %>
+<hr>
 
-<%= link_to 'Create new Fuel Report', new_vehicle_service_path(@vehicle) %>
+<%= link_to 'Back To Vehicles', vehicles_path %>
