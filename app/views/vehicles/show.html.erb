@@ -27,7 +27,7 @@
           <%= link_to 'Destroy', vehicle_fill_up_path(@vehicle, fill_up), method: :delete, data: { confirm: 'Are you sure?' } %></li>
       </ul>
     <% end %>
-    <%= link_to 'Create new Fuel Report', new_vehicle_fill_up_path(@vehicle) %>
+    <%= link_to 'Create new Fill Up', new_vehicle_fill_up_path(@vehicle) %>
   </div>
   <div class="col-md-4">
     <h5>Servies</h5>
@@ -41,7 +41,7 @@
     </ul>
     <% end %>
 
-    <%= link_to 'Create new Fuel Report', new_vehicle_service_path(@vehicle) %>
+    <%= link_to 'Create new Service', new_vehicle_service_path(@vehicle) %>
 
   </div>
 
