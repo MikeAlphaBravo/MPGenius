@@ -26,4 +26,13 @@ class Vehicle < ApplicationRecord
     array_of_costs.sum.to_f
   end
 
+  def latest_fill_up_odometer
+    array_of_odometer_readings = []
+    fill_ups.each do |fill_up|
+      next if fill_up.total_cost.nil?
+      array_of_odometer_readings.push(fill_up.odometer_reading)
+    end
+    array_of_odometer_readings.last
+  end
+
 end

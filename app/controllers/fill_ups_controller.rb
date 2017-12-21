@@ -41,6 +41,9 @@ class FillUpsController < ApplicationController
     #running total
     # previous_fill_up_total = @vehicle.fillups.last.
 
+    #push most recent odometer reading to vehicle main page
+    # latest_fill_up_odometer = @vehicle.fillups.last.odometer_reading
+
     if @fill_up.save
       redirect_to vehicle_fill_up_path(@vehicle, @fill_up), notice: 'Fill up was successfully created.'
     else
