@@ -27,7 +27,6 @@ class FillUpsController < ApplicationController
   # POST /fill_ups.json
   def create
     @fill_up = FillUp.new(fill_up_params)
-    #fill up we are creating is set to the appropriate vehicle
     previous_fill_up_mileage = @vehicle.fill_ups.last.odometer_reading
     current_fill_up_mileage = @fill_up.odometer_reading
     mileage_difference = current_fill_up_mileage - previous_fill_up_mileage
@@ -36,7 +35,7 @@ class FillUpsController < ApplicationController
     @fill_up.mpg = current_mpg
     @fill_up.vehicle = @vehicle
 
-    #calculate current total
+    #calculate current total, something here is not quite right yet.  Need to fix decimals and rounding
     @fill_up.total_cost = @fill_up.price_per_gallon * @fill_up.gallons_in_fill
 
     #running total
