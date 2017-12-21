@@ -11,8 +11,9 @@
       <li>Notes: <%= @vehicle.notes %></li>
     </ul>
 
-    <h5>Average MPG: <%= %></h5>
+    <h5>Average MPG: <%= @vehicle.average_mpg %></h5>
     <h5>Average MPG of a bicycle 178 *</h5>
+    <h5>Total Costs of Fuel: $<%= @vehicle.lifetime_cost_of_fuel  %></h5>
 
     <%= link_to 'Edit Vihicle', edit_vehicle_path(@vehicle) %>
   </div>
