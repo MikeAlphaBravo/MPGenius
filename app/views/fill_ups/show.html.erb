@@ -13,7 +13,7 @@
     <li>NOTES: <%= @fill_up.notes %></li>
   </ul>
 
-  <h5>Average MPG: <%= %></h5>
+  <h5>Average MPG: <%= @vehicle.average_mpg %></h5>
   <h5>Average MPG of a bicycle 178 *</h5>
 
 <%= link_to 'Edit', edit_vehicle_fill_up_path(@vehicle, @fill_up) %> |
