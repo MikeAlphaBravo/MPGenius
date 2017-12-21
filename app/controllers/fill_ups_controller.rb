@@ -36,6 +36,12 @@ class FillUpsController < ApplicationController
     @fill_up.mpg = current_mpg
     @fill_up.vehicle = @vehicle
 
+    #calculate current total
+    @fill_up.total_cost = @fill_up.price_per_gallon * @fill_up.gallons_in_fill
+
+    #running total
+    # previous_fill_up_total = @vehicle.fillups.last.
+
     if @fill_up.save
       redirect_to vehicle_fill_up_path(@vehicle, @fill_up), notice: 'Fill up was successfully created.'
     else
