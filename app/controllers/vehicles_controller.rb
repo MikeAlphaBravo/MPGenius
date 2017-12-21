@@ -1,5 +1,5 @@
 class VehiclesController < ApplicationController
-  before_action :set_vehicle, only: [:show, :edit, :update, :destroy]
+  before_action :set_vehicle, only: [:show, :edit, :update, :destroy, :create]
 
   # GET /vehicles
   # GET /vehicles.json
@@ -59,6 +59,7 @@ class VehiclesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def vehicle_params
       params.fetch(:vehicle, {})
-      params.require(:vehicle).permit(:name, :user_id, :year, :make, :model, :odometer, :image)
+      params.require(:vehicle).permit(:name, :user_id)
+        # :user_id, :year, :make, :model, :odometer, :image)
     end
 end
