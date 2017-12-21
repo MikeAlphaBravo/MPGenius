@@ -16,4 +16,14 @@ class Vehicle < ApplicationRecord
     array_of_mpgs.sum.to_f / array_of_mpgs.length
   end
   #in instance you will be calling an existing @vehicle.average_mpg
+
+  def lifetime_cost_of_fuel
+    array_of_costs = []
+    fill_ups.each do |fill_up|
+      next if fill_up.total_cost.nil?
+      array_of_costs.push(fill_up.total_cost)
+    end
+    array_of_costs.sum.to_f
+  end
+
 end
