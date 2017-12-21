@@ -78,7 +78,6 @@ class FillUpsController < ApplicationController
     @vehicle = Vehicle.find(params[:vehicle_id])
   end
 
-  # Never trust parameters from the scary internet, only allow the white list through.
   def fill_up_params
     params.require(:fill_up).permit(:odometer_reading, :price_per_gallon, :gallons_in_fill, :total_cost, :percent_city_highway, :notes)
   end
