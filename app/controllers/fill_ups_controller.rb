@@ -1,6 +1,6 @@
 class FillUpsController < ApplicationController
   before_action :set_fill_up, only: [:show, :edit, :update, :destroy]
-  before_action :set_vehicle, only: [:index, :new, :edit, :show, :create]
+  before_action :set_vehicle, only: [:index, :new, :edit, :show, :create, :update]
 
   # GET /fill_ups
   # GET /fill_ups.json
@@ -26,14 +26,9 @@ class FillUpsController < ApplicationController
   # POST /fill_ups
   # POST /fill_ups.json
   def create
+    #calculate_mpg and calculate_total_costs methods defined below and called here.
     @fill_up = FillUp.new(fill_up_params)
-    previous_fill_up_mileage = @vehicle.fill_ups.last.odometer_reading
-    current_fill_up_mileage = @fill_up.odometer_reading
-    mileage_difference = current_fill_up_mileage - previous_fill_up_mileage
-    current_mpg = mileage_difference.to_f / @fill_up.gallons_in_fill
-    #round to two decimal places
-    @fill_up.mpg = current_mpg
-    @fill_up.vehicle = @vehicle
+    @fill_up.calculate_mpg(@vehicle)
 
     #calculate current total, something here is not quite right yet.  Need to fix decimals and rounding
     @fill_up.total_cost = @fill_up.price_per_gallon * @fill_up.gallons_in_fill
@@ -52,7 +47,7 @@ class FillUpsController < ApplicationController
   # PATCH/PUT /fill_ups/1.json
   def update
     if @fill_up.update(fill_up_params)
-      redirect_to @fill_up, notice: 'Fill up was successfully updated.'
+      redirect_to vehicle_fill_up_path(@vehicle, @fill_up), notice: 'Fill up was successfully updated.'
     else
       render :edit
     end

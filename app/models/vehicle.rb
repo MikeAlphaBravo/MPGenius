@@ -7,8 +7,6 @@ class Vehicle < ApplicationRecord
   has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" }
 	validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 
-  # after_create :assign_vehicle_to_user
-
   def average_mpg
     array_of_mpgs = []
     fill_ups.each do |fill_up|
@@ -36,13 +34,5 @@ class Vehicle < ApplicationRecord
     end
     array_of_odometer_readings.last
   end
-
-  # def assign_vehicle_to_user
-  #   Account.create(
-  #     user: current_user,
-  #     vehicle: self
-  #   )
-  #   need to research how to properly integrate this into a :through, this is the hacky version, if I were to delete a vehicle now the account record still exists in the database.
-  # end
 
 end
