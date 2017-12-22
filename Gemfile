@@ -5,6 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+# Faker
+gem 'faker'
 # popper
 gem 'popper_js', '~> 1.12.9'
 # jQuery
