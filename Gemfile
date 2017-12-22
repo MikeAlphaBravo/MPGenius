@@ -6,7 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 # Faker
-gem 'faker'
+gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 # popper
 gem 'popper_js', '~> 1.12.9'
 # jQuery
@@ -52,7 +52,6 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'simplecov', require: false
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'faker'
   gem 'pry'
 end
 
