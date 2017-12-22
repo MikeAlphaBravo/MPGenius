@@ -1,5 +1,5 @@
 class Vehicle < ApplicationRecord
-  has_many :accounts
+  has_many :accounts, dependent: :destroy
   has_many :users, through: :accounts
   has_many :fill_ups
   has_many :services

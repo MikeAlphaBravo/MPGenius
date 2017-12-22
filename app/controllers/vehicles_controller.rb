@@ -26,11 +26,7 @@ class VehiclesController < ApplicationController
   def create
     @vehicle = Vehicle.new(vehicle_params)
     if @vehicle.save
-      Account.create(
-        user_id: current_user.id,
-        vehicle_id: @vehicle.id
-      )
-      #need to research how to properly integrate this into a :through, this is the hacky version, if I were to delete a vehicle now the account record still exists in the database.
+      assign_vehicle_to_user
       redirect_to @vehicle, notice: 'Vehicle was successfully created.'
     else
       render :new
@@ -66,5 +62,13 @@ class VehiclesController < ApplicationController
       params.require(:vehicle).permit(:nickname)
         # :year, :make, :model, :odometer, :image)
         #anything that comes from the actual form
+    end
+
+    def assign_vehicle_to_user
+      Account.create(
+        user_id: current_user.id,
+        vehicle_id: @vehicle.id
+      )
+      #need to research how to properly integrate this into a :through, this is the hacky version, if I were to delete a vehicle now the account record still exists in the database.
     end
 end
