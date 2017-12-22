@@ -22,7 +22,7 @@ class Seed
     15.times do |i|
       user = User.create!(
         email: Faker::Internet.email,
-        username: Faker::Simpsons.character,
+        username: Faker::Name.name,
         password: 'password',
         password_confirmation: 'password'
       )
