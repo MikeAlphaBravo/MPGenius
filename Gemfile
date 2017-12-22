@@ -5,7 +5,10 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
+# popper
+gem 'popper_js', '~> 1.12.9'
+# jQuery
+gem 'jquery-rails'
 # Bootstrap
 gem 'bootstrap'
 # Authentication
