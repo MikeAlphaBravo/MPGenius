@@ -1,4 +1,4 @@
-class Users::SessionsOrRegistrationsController < ApplicationController
+class User::SessionsOrRegistrationsController < ApplicationController
 
   def new
   end
