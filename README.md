@@ -18,6 +18,19 @@
 
 Go to `this link at Heroku` to run live application
 
+or on your local computer clone project in terminal with:
+`git clone https://github.com/MikeAlphaBravo/MPGenius`
+
+`cd MPGenius`
+
+`bundle`
+
+`rails db:create`
+
+`rails db:test:prepare`
+
+`rails s`
+
 ## Running the tests
 
 _There are currently no tests for this application but will be soon!_
