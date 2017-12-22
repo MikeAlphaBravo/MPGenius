@@ -1,5 +1,5 @@
 class VehiclesController < ApplicationController
-  before_action :set_vehicle, only: [:show, :edit, :update, :destroy, :create]
+  before_action :set_vehicle, only: [:show, :edit, :update, :destroy]
 
   # GET /vehicles
   # GET /vehicles.json
@@ -24,8 +24,13 @@ class VehiclesController < ApplicationController
   # POST /vehicles
   # POST /vehicles.json
   def create
-    @vehicle = current_user.vehicles.new(vehicle_params)
+    @vehicle = Vehicle.new(vehicle_params)
     if @vehicle.save
+      Account.create(
+        user_id: current_user.id,
+        vehicle_id: @vehicle.id
+      )
+      #need to research how to properly integrate this into a :through, this is the hacky version, if I were to delete a vehicle now the account record still exists in the database.
       redirect_to @vehicle, notice: 'Vehicle was successfully created.'
     else
       render :new
@@ -58,8 +63,8 @@ class VehiclesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def vehicle_params
-      params.fetch(:vehicle, {})
-      params.require(:vehicle).permit(:name, :user_id)
-        # :user_id, :year, :make, :model, :odometer, :image)
+      params.require(:vehicle).permit(:nickname)
+        # :year, :make, :model, :odometer, :image)
+        #anything that comes from the actual form
     end
 end
