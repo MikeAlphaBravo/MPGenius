@@ -75,6 +75,9 @@ _Updates or suggestions please contact [Michael A. Brooks] or make a contributio
 
 ![alt text](/app/assets/images/homepage_screenshot.jpg)
 
+Work flow as of 12.26.17
+![alt text](/app/assets/images/workflow.jpg)
+
 ### License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
