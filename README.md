@@ -16,7 +16,7 @@
 
 ## Setup/Installation Requirements
 
-Go to `this link at Heroku` to run live application
+Go to `https://mpgenius.herokuapp.com/` to run live application
 
 or on your local computer clone project in terminal with:
 `git clone https://github.com/MikeAlphaBravo/MPGenius`
