@@ -21,13 +21,16 @@
     <%= form.file_field :image %>
   </div><br>
 
+<select>
+  <option>options_for_select([["Dollar", "$"], ["Kroner", "DKK"]])></options>
+</select>
+
   <select data-placeholder="&nbsp;Year" class="chzn-select year" style="width:70px;" tabindex="1" id="year">
     <option value="">Year</option>
-    form.select(:vehicle, :year, ['2014', 2014])
-
-    <% options = options_from_collection_for_select(@vehicle, 'id', 'year') %>
-    <%= f.select :vehicle_id,  options %>
-
+    <option year="2018">2018</option>
+    <option value="2017">2017</option>
+    <option value="2016">2016</option>
+    <option value="2015">2015</option>
     <option value="2014">2014</option>
     <option value="2013">2013</option>
     <option value="2012">2012</option>
