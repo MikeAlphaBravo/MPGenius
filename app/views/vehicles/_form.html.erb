@@ -21,42 +21,9 @@
     <%= form.file_field :image %>
   </div><br>
 
-<select>
-  <option>options_for_select([["Dollar", "$"], ["Kroner", "DKK"]])></options>
-</select>
+<%= form.select :year, options_for_select((1950..(Time.now.year + 1)).to_a.reverse, selected: @vehicle.year), include_blank: 'Year' %>
 
-  <select data-placeholder="&nbsp;Year" class="chzn-select year" style="width:70px;" tabindex="1" id="year">
-    <option value="">Year</option>
-    <option year="2018">2018</option>
-    <option value="2017">2017</option>
-    <option value="2016">2016</option>
-    <option value="2015">2015</option>
-    <option value="2014">2014</option>
-    <option value="2013">2013</option>
-    <option value="2012">2012</option>
-    <option value="2011">2011</option>
-    <option value="2010">2010</option>
-    <option value="2009">2009</option>
-    <option value="2008">2008</option>
-    <option value="2007">2007</option>
-    <option value="2006">2006</option>
-    <option value="2005">2005</option>
-    <option value="2004">2004</option>
-    <option value="2003">2003</option>
-    <option value="2002">2002</option>
-    <option value="2001">2001</option>
-    <option value="2000">2000</option>
-    <option value="1999">1999</option>
-    <option value="1998">1998</option>
-    <option value="1997">1997</option>
-    <option value="1996">1996</option>
-    <option value="1995">1995</option>
-    <option value="1994">1994</option>
-    <option value="1993">1993</option>
-    <option value="1992">1992</option>
-    <option value="1991">1991</option>
-    <option value="1990">1990</option>
-  </select>
+ <!-- class="chzn-select year" style="width:70px;" tabindex="1" -->
   <select data-placeholder="Make" class="chzn-select" style="width:115px;" tabindex="2" id="make">
     <option value="">Make</option>
     <option value="ACURA">ACURA</option>
