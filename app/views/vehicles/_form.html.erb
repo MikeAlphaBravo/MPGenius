@@ -23,18 +23,10 @@
 
 <%= form.select :year, options_for_select((1950..(Time.now.year + 1)).to_a.reverse, selected: @vehicle.year), include_blank: 'Year' %>
 
-<%= form.select :make, options_for_select([["Acura", "Acura"], ["Aston Martin", "Aston Martin"], ["Audi", "Audi"], ["Aston Martin", "Aston Martin"], ["Bentley", "Bentley"], ["BMW", "BMW"], ["Buick", "Buick"], ["Cadillac", "Cadillac"]], selected: @vehicle.make), include_blank: 'Make' %>
+<%= form.select :make, options_for_select([["Acura", "Acura"], ["Aston Martin", "Aston Martin"], ["Audi", "Audi"], ["Bentley", "Bentley"], ["BMW", "BMW"], ["Buick", "Buick"], ["Cadillac", "Cadillac"]], selected: @vehicle.make), include_blank: 'Make' %>
 
-<%= form.select :model, options_for_select([["Crosstrek", "Crosstrek"], ["Forester", "Forester"], ["Impreza", "Impreza"], ["Legacy", "Legacy"], ["Outback", "Outback"], ["WRX", "WRX"]], selected: @vehicle.model), include_blank: 'Model' %>
+<%= form.select :model, options_for_select([["Crosstrek", "Crosstrek"], ["Forester", "Forester"], ["Impreza", "Impreza"], ["Legacy", "Legacy"], ["Outback", "Outback"], ["WRX", "WRX"]], selected: @vehicle.model), include_blank: 'Model' %><br><br>
  <!-- class="chzn-select year" style="width:70px;" tabindex="1" -->
-  
-  <select data-placeholder="Trim" class="chzn-select" style="width:100px;" tabindex="4" id="trim">
-    <option value="">Trim</option>
-    <option value="LIMITED">LIMITED</option>
-    <option value="UNLIMITED">UNLIMITED</option>
-    <option value="SPORT">SPORT</option>
-    <option value="RENEGADE">RENEGADE</option>
-  </select><br><br>
 
   <div class="actions">
     <%= form.submit %>

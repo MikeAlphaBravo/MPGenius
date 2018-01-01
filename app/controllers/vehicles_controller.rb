@@ -61,6 +61,7 @@ class VehiclesController < ApplicationController
     def vehicle_params
       params.require(:vehicle).permit(:nickname, :year, :make, :model)
         # , :odometer, :image)
+        # , :trim
         #anything that comes from the actual form
     end
 
