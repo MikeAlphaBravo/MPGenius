@@ -23,7 +23,7 @@
 
 <%= form.select :year, options_for_select((1950..(Time.now.year + 1)).to_a.reverse, selected: @vehicle.year), include_blank: 'Year' %>
 
-<%= form.select :make, options_for_select([["Acura", "Acura"], ["Aston Martin", "Aston Martin"]], selected: @vehicle.make), include_blank: 'Make' %>
+<%= form.select :make, options_for_select([["Acura", "Acura"], ["Aston Martin", "Aston Martin"], ["Audi", "Audi"], ["Aston Martin", "Aston Martin"], ["Bentley", "Bentley"], ["BMW", "BMW"], ["Buick", "Buick"], ["Cadillac", "Cadillac"]], selected: @vehicle.make), include_blank: 'Make' %>
 
  <!-- class="chzn-select year" style="width:70px;" tabindex="1" -->
   <select data-placeholder="Make" class="chzn-select" style="width:115px;" tabindex="2" id="make">
