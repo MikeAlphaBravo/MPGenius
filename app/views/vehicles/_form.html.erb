@@ -25,70 +25,9 @@
 
 <%= form.select :make, options_for_select([["Acura", "Acura"], ["Aston Martin", "Aston Martin"], ["Audi", "Audi"], ["Aston Martin", "Aston Martin"], ["Bentley", "Bentley"], ["BMW", "BMW"], ["Buick", "Buick"], ["Cadillac", "Cadillac"]], selected: @vehicle.make), include_blank: 'Make' %>
 
+<%= form.select :model, options_for_select([["Crosstrek", "Crosstrek"], ["Forester", "Forester"], ["Impreza", "Impreza"], ["Legacy", "Legacy"], ["Outback", "Outback"], ["WRX", "WRX"]], selected: @vehicle.model), include_blank: 'Model' %>
  <!-- class="chzn-select year" style="width:70px;" tabindex="1" -->
-  <select data-placeholder="Make" class="chzn-select" style="width:115px;" tabindex="2" id="make">
-    <option value="">Make</option>
-    <option value="ACURA">ACURA</option>
-    <option value="ASTON MARTIN">ASTON MARTIN</option>
-    <option value="AUDI">AUDI</option>
-    <option value="BENTLEY">BENTLEY</option>
-    <option value="BMW">BMW</option>
-    <option value="BUICK">BUICK</option>
-    <option value="CADILLAC">CADILLAC</option>
-    <option value="CHEVROLET">CHEVROLET</option>
-    <option value="CHRYSLER">CHRYSLER</option>
-    <option value="DODGE">DODGE</option>
-    <option value="FERRARI">FERRARI</option>
-    <option value="FORD">FORD</option>
-    <option value="GMC">GMC</option>
-    <option value="HONDA">HONDA</option>
-    <option value="HUMMER">HUMMER</option>
-    <option value="HYUNDAI">HYUNDAI</option>
-    <option value="INFINITI">INFINITI</option>
-    <option value="ISUZU">ISUZU</option>
-    <option value="JAGUAR">JAGUAR</option>
-    <option value="JEEP">JEEP</option>
-    <option value="KIA">KIA</option>
-    <option value="LAMBORGHINI">LAMBORGHINI</option>
-    <option value="LAND ROVER">LAND ROVER</option>
-    <option value="LEXUS">LEXUS</option>
-    <option value="LINCOLN">LINCOLN</option>
-    <option value="LOTUS">LOTUS</option>
-    <option value="MASERATI">MASERATI</option>
-    <option value="MAYBACH">MAYBACH</option>
-    <option value="MAZDA">MAZDA</option>
-    <option value="MERCEDES-BENZ">MERCEDES-BENZ</option>
-    <option value="MERCURY">MERCURY</option>
-    <option value="MINI">MINI</option>
-    <option value="MITSUBISHI">MITSUBISHI</option>
-    <option value="NISSAN">NISSAN</option>
-    <option value="PONTIAC">PONTIAC</option>
-    <option value="PORSCHE">PORSCHE</option>
-    <option value="ROLLS-ROYCE">ROLLS-ROYCE</option>
-    <option value="SAAB">SAAB</option>
-    <option value="SATURN">SATURN</option>
-    <option value="SUBARU">SUBARU</option>
-    <option value="SUZUKI">SUZUKI</option>
-    <option value="TOYOTA">TOYOTA</option>
-    <option value="VOLKSWAGEN">VOLKSWAGEN</option>
-    <option value="VOLVO">VOLVO</option>
-  </select>
-  <select data-placeholder="Model" class="chzn-select" style="width:115px;" tabindex="2" id="model">
-    <option value="">Model</option>
-    <option value="CROSSTREK">CROSSTREK</option>
-    <option value="FORESTER">FORESTER</option>
-    <option value="IMPREZA">IMPREZA</option>
-    <option value="LEGACY">LEGACY</option>
-    <option value="OUTBACK">OUTBACK</option>
-    <option value="WRX">WRX</option>
-    <option value="">Model</option>
-    <option value="COMMANDER">COMMANDER</option>
-    <option value="COMPASS">COMPASS</option>
-    <option value="GRAND CHEROKEE">GRAND CHEROKEE</option>
-    <option value="LIBERTY">LIBERTY</option>
-    <option value="PATRIOT">PATRIOT</option>
-    <option value="WRANGLER">WRANGLER</option>
-  </select>
+  
   <select data-placeholder="Trim" class="chzn-select" style="width:100px;" tabindex="4" id="trim">
     <option value="">Trim</option>
     <option value="LIMITED">LIMITED</option>
