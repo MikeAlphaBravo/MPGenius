@@ -28,6 +28,11 @@
 <%= form.select :model, options_for_select([["Crosstrek", "Crosstrek"], ["Forester", "Forester"], ["Impreza", "Impreza"], ["Legacy", "Legacy"], ["Outback", "Outback"], ["WRX", "WRX"]], selected: @vehicle.model), include_blank: 'Model' %><br><br>
  <!-- class="chzn-select year" style="width:70px;" tabindex="1" -->
 
+ <div class="field">
+   <%= form.label :odometer %><br>
+   <%= form.text_field :odometer %>
+ </div>
+
   <div class="actions">
     <%= form.submit %>
   </div><br>
