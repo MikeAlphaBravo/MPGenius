@@ -5,6 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+# Urban Airship
+gem 'urbanairship'
 # New Relic
 gem 'newrelic_rpm'
 # Faker
