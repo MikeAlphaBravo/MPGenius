@@ -5,6 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+# New Relic
+gem 'newrelic_rpm'
 # Faker
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 # popper
